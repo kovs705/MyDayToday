@@ -19,7 +19,7 @@ struct ContentView: View {
                 VStack {
                     HStack {
                         Text("Hello, Eugene")
-                            .modifier(AppearModifier())
+                            
                             .font(.largeTitle)
                             .fontWeight(.light)
                             .fontDesign(.rounded)
@@ -51,7 +51,7 @@ struct ContentView: View {
                 .frame(width: geo.size.width, height: geo.size.height)
                 
             }
-            
+            .modifier(AppearModifier())
         }
         .background(Color.pineapple)
     }

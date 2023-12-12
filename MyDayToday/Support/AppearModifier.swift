@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppearModifier: ViewModifier {
     
-    @State var opacity: CGFloat = 0.1
+    @State var opacity: CGFloat = 0
     @State var yCoordinate: CGFloat = 20
     var duration: CGFloat = 2
     
@@ -18,7 +18,7 @@ struct AppearModifier: ViewModifier {
             .opacity(opacity)
             .offset(y: yCoordinate)
             .onAppear {
-                withAnimation(.spring(duration: duration)) {
+                withAnimation(.interactiveSpring(duration: duration)) {
                     yCoordinate = 0
                     opacity = 1
                 }
@@ -28,18 +28,8 @@ struct AppearModifier: ViewModifier {
 
 struct PreviewOfModifier: PreviewProvider {
     static var previews: some View {
-        test()
-    }
-}
-
-struct test: View {
-    var body: some View {
-        ScrollView {
-            VStack {
-                Text("Hewwo!")
-                    .modifier(AppearModifier())
-                Text("What?")
-            }
-        }
+        Text("Hello")
+            .font(.system(size: 22))
+            .modifier(AppearModifier())
     }
 }
