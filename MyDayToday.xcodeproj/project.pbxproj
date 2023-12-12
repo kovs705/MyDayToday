@@ -22,6 +22,7 @@
 		E57553522B28A80300EBAE78 /* AlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57553512B28A80300EBAE78 /* AlertContent.swift */; };
 		E57553542B28DF0B00EBAE78 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57553532B28DF0B00EBAE78 /* MoodView.swift */; };
 		E57553562B28E37900EBAE78 /* DarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57553552B28E37900EBAE78 /* DarkView.swift */; };
+		E57553582B28E87B00EBAE78 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57553572B28E87B00EBAE78 /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		E57553512B28A80300EBAE78 /* AlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContent.swift; sourceTree = "<group>"; };
 		E57553532B28DF0B00EBAE78 /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		E57553552B28E37900EBAE78 /* DarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkView.swift; sourceTree = "<group>"; };
+		E57553572B28E87B00EBAE78 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			children = (
 				E575534C2B28A7B400EBAE78 /* Alert */,
 				E57553552B28E37900EBAE78 /* DarkView.swift */,
+				E57553572B28E87B00EBAE78 /* CustomSlider.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				E57553562B28E37900EBAE78 /* DarkView.swift in Sources */,
 				E57553522B28A80300EBAE78 /* AlertContent.swift in Sources */,
+				E57553582B28E87B00EBAE78 /* CustomSlider.swift in Sources */,
 				E55999992B27438B001C20BE /* AppearModifier.swift in Sources */,
 				E55999692B27402B001C20BE /* ContentView.swift in Sources */,
 				E57553502B28A7DF00EBAE78 /* AlertView.swift in Sources */,

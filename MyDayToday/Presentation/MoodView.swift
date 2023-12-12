@@ -9,18 +9,27 @@ import SwiftUI
 
 struct MoodView: View {
     
-    
+    @State var moodValue: Double = 5.0
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
                 .fill(Color.paleBanana)
             
-            Text("What's your mood for today?")
-            //TODO: - Make different questions
-                .fontDesign(.rounded)
-                .fontWeight(.light)
-                .font(.system(size: 38))
+            VStack {
+                Spacer()
+                
+                Text("What's your mood for today?")
+                //TODO: - Make different questions
+                    .fontDesign(.rounded)
+                    .fontWeight(.light)
+                    .font(.system(size: 38))
+                
+                MoodSlider(value: $moodValue)
+                    .frame(height: 30)
+            }
+            
+            
             
         }
     }
