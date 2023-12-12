@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		E55999672B27402B001C20BE /* MyDayTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999662B27402B001C20BE /* MyDayTodayApp.swift */; };
 		E55999692B27402B001C20BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999682B27402B001C20BE /* ContentView.swift */; };
-		E559996B2B27402B001C20BE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559996A2B27402B001C20BE /* Item.swift */; };
+		E559996B2B27402B001C20BE /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559996A2B27402B001C20BE /* Day.swift */; };
 		E559996D2B27402D001C20BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E559996C2B27402D001C20BE /* Assets.xcassets */; };
 		E55999702B27402D001C20BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E559996F2B27402D001C20BE /* Preview Assets.xcassets */; };
 		E559997A2B27402D001C20BE /* MyDayTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999792B27402D001C20BE /* MyDayTodayTests.swift */; };
 		E55999842B27402D001C20BE /* MyDayTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999832B27402D001C20BE /* MyDayTodayUITests.swift */; };
 		E55999862B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999852B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift */; };
+		E55999972B27429B001C20BE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999962B27429B001C20BE /* MainViewModel.swift */; };
+		E55999992B27438B001C20BE /* AppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999982B27438B001C20BE /* AppearModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		E55999632B27402B001C20BE /* MyDayToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDayToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55999662B27402B001C20BE /* MyDayTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDayTodayApp.swift; sourceTree = "<group>"; };
 		E55999682B27402B001C20BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E559996A2B27402B001C20BE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E559996A2B27402B001C20BE /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		E559996C2B27402D001C20BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E559996F2B27402D001C20BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E55999752B27402D001C20BE /* MyDayTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDayTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,8 @@
 		E559997F2B27402D001C20BE /* MyDayTodayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDayTodayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55999832B27402D001C20BE /* MyDayTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDayTodayUITests.swift; sourceTree = "<group>"; };
 		E55999852B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDayTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E55999962B27429B001C20BE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E55999982B27438B001C20BE /* AppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,10 @@
 		E55999652B27402B001C20BE /* MyDayToday */ = {
 			isa = PBXGroup;
 			children = (
-				E55999662B27402B001C20BE /* MyDayTodayApp.swift */,
-				E55999682B27402B001C20BE /* ContentView.swift */,
-				E559996A2B27402B001C20BE /* Item.swift */,
-				E559996C2B27402D001C20BE /* Assets.xcassets */,
+				E55999922B27410F001C20BE /* Presentation */,
+				E55999942B274127001C20BE /* Logic */,
+				E55999932B274121001C20BE /* Data */,
+				E55999952B27414A001C20BE /* Support */,
 				E559996E2B27402D001C20BE /* Preview Content */,
 			);
 			path = MyDayToday;
@@ -128,6 +132,40 @@
 				E55999852B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift */,
 			);
 			path = MyDayTodayUITests;
+			sourceTree = "<group>";
+		};
+		E55999922B27410F001C20BE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E55999682B27402B001C20BE /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E55999932B274121001C20BE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E559996A2B27402B001C20BE /* Day.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E55999942B274127001C20BE /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E55999962B27429B001C20BE /* MainViewModel.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		E55999952B27414A001C20BE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E559996C2B27402D001C20BE /* Assets.xcassets */,
+				E55999662B27402B001C20BE /* MyDayTodayApp.swift */,
+				E55999982B27438B001C20BE /* AppearModifier.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55999992B27438B001C20BE /* AppearModifier.swift in Sources */,
 				E55999692B27402B001C20BE /* ContentView.swift in Sources */,
-				E559996B2B27402B001C20BE /* Item.swift in Sources */,
+				E559996B2B27402B001C20BE /* Day.swift in Sources */,
 				E55999672B27402B001C20BE /* MyDayTodayApp.swift in Sources */,
+				E55999972B27429B001C20BE /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
