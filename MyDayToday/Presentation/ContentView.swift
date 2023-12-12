@@ -10,50 +10,67 @@ import SwiftData
 
 struct ContentView: View {
     
+    @State private var toggle = false
+    @State private var showMoodView = false
+    
     @Environment(\.modelContext) private var modelContext
     @Query private var days: [Day]
     
     var body: some View {
         GeometryReader { geo in
-            ScrollView {
-                VStack {
-                    HStack {
-                        Text("Hello, Eugene")
-                            
-                            .font(.largeTitle)
-                            .fontWeight(.light)
-                            .fontDesign(.rounded)
+            ZStack {
+                ScrollView {
+                    VStack {
+                        HStack {
+                            Text("Hello, Eugene")
+                                .fontDesign(.rounded)
+                                .fontWeight(.light)
+                                .font(.system(size: 38))
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                        .padding(.top, 40)
+                        
+                        Spacer()
+                            .background(Color.blue)
+                        Text("Make your first note")
                         Spacer()
                     }
-                    .padding(.horizontal)
-                    .padding(.top, 40)
-                    
+                    .modifier(AppearModifier(onDissapearToggle: $toggle))
+                    .frame(width: geo.size.width, height: geo.size.height)
+                }
+                
+                VStack {
                     Spacer()
-                        .background(Color.blue)
-                    
-                    Text("Make your first note")
-                    
-                    Spacer()
-                    
                     Button(action: {
-                        
+                        withAnimation {
+                            showMoodView.toggle()
+                        }
                     }, label: {
                         Image(systemName: "plus")
                             .foregroundStyle(.white)
                             .padding()
                             .background(
-                                Circle()
+                                Capsule()
                                     .fill(.black)
-                                    .frame(alignment: .center)
+                                    .frame(width: 130, height: 45, alignment: .center)
                             )
                     })
                 }
-                .frame(width: geo.size.width, height: geo.size.height)
+                
+                
+                DarkView(isDark: $showMoodView)
                 
             }
-            .modifier(AppearModifier())
+            .present(isPresented: $showMoodView, type: .toast, position: .bottom, animation: .spring, autohideDuration: nil, closeOnTap: false, closeOnTapOutside: true) {
+                MoodView()
+                    .frame(width: geo.size.width, height: geo.size.height * 0.9)
+            }
         }
-        .background(Color.pineapple)
+    }
+    
+    private func presentMoodView() {
+        showMoodView.toggle()
     }
     
     private func addItem() {
