@@ -17,6 +17,7 @@
 		E55999862B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999852B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift */; };
 		E55999972B27429B001C20BE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999962B27429B001C20BE /* MainViewModel.swift */; };
 		E55999992B27438B001C20BE /* AppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55999982B27438B001C20BE /* AppearModifier.swift */; };
+		E55E3E9A2B2B924D006542BA /* EmojiAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E3E992B2B924D006542BA /* EmojiAppear.swift */; };
 		E575534E2B28A7C200EBAE78 /* DispatchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575534D2B28A7C200EBAE78 /* DispatchWorker.swift */; };
 		E57553502B28A7DF00EBAE78 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575534F2B28A7DF00EBAE78 /* AlertView.swift */; };
 		E57553522B28A80300EBAE78 /* AlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57553512B28A80300EBAE78 /* AlertContent.swift */; };
@@ -56,6 +57,7 @@
 		E55999852B27402D001C20BE /* MyDayTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDayTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E55999962B27429B001C20BE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E55999982B27438B001C20BE /* AppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearModifier.swift; sourceTree = "<group>"; };
+		E55E3E992B2B924D006542BA /* EmojiAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAppear.swift; sourceTree = "<group>"; };
 		E575534D2B28A7C200EBAE78 /* DispatchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchWorker.swift; sourceTree = "<group>"; };
 		E575534F2B28A7DF00EBAE78 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		E57553512B28A80300EBAE78 /* AlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContent.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				E559996C2B27402D001C20BE /* Assets.xcassets */,
 				E55999662B27402B001C20BE /* MyDayTodayApp.swift */,
 				E55999982B27438B001C20BE /* AppearModifier.swift */,
+				E55E3E992B2B924D006542BA /* EmojiAppear.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				E57553582B28E87B00EBAE78 /* CustomSlider.swift in Sources */,
 				E55999992B27438B001C20BE /* AppearModifier.swift in Sources */,
 				E55999692B27402B001C20BE /* ContentView.swift in Sources */,
+				E55E3E9A2B2B924D006542BA /* EmojiAppear.swift in Sources */,
 				E57553502B28A7DF00EBAE78 /* AlertView.swift in Sources */,
 				E559996B2B27402B001C20BE /* Day.swift in Sources */,
 				E55999672B27402B001C20BE /* MyDayTodayApp.swift in Sources */,

@@ -17,8 +17,6 @@ struct MoodView: View {
                 .fill(Color.paleBanana)
             
             VStack {
-                Spacer()
-                
                 Text("What's your mood for today?")
                 //TODO: - Make different questions
                     .fontDesign(.rounded)
@@ -27,8 +25,8 @@ struct MoodView: View {
                 
                 MoodSlider(value: $moodValue)
                     .frame(height: 30)
+                    .padding(.top, 30)
             }
-            
             
             
         }
