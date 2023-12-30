@@ -10,6 +10,8 @@ import SwiftUI
 struct MoodView: View {
     
     @State var moodValue: Double = 5.0
+    @State var emoji: String = ""
+    var addCallback: (String) -> Void
     
     var body: some View {
         ZStack {
@@ -23,9 +25,23 @@ struct MoodView: View {
                     .fontWeight(.light)
                     .font(.system(size: 38))
                 
-                MoodSlider(value: $moodValue)
+                MoodSlider(value: $moodValue, emoji: $emoji)
                     .frame(height: 30)
                     .padding(.top, 30)
+                            
+                Button(action: {
+                    addCallback(emoji)
+                }, label: {
+                    Text("Добавить \(emoji)")
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(
+                            Capsule()
+                                .fill(.black)
+                                .frame(width: 130, height: 45, alignment: .center)
+                        )
+                })
+                .padding(.top, 25)
             }
             
             
@@ -36,6 +52,8 @@ struct MoodView: View {
 
 struct MoodViewPreview: PreviewProvider {
     static var previews: some View {
-        MoodView()
+        MoodView(addCallback: { _ in
+            
+        })
     }
 }

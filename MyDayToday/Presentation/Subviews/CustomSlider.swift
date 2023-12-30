@@ -14,7 +14,7 @@ struct MoodSlider: View {
     var sliderRange: ClosedRange<Double> = 1...10
     @State private var isDragging = false
     
-    @State private var emoji: String = ""
+    @Binding var emoji: String
     
     var body: some View {
         GeometryReader { gr in
@@ -106,10 +106,11 @@ struct MoodSlider: View {
 
 struct SliderPreview: PreviewProvider {
     
-    @State static var num = 6.0
+    @State static var num   = 6.0
+    @State static var emoji = ""
     
     static var previews: some View {
-        MoodSlider(value: $num)
+        MoodSlider(value: $num, emoji: $emoji)
             .frame(width: 300, height: 30)
     }
 }

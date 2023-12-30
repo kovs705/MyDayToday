@@ -11,10 +11,10 @@ import SwiftData
 @Model
 final class Day {
     var date: Date
-    var feelings: Int
+    var feelings: String
     var note: String?
     
-    init(date: Date, feelings: Int, note: String? = nil) {
+    init(date: Date, feelings: String, note: String? = nil) {
         self.date = date
         self.feelings = feelings
         self.note = note

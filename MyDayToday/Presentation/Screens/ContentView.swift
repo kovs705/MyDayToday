@@ -31,9 +31,20 @@ struct ContentView: View {
                         .padding(.horizontal)
                         .padding(.top, 40)
                         
-                        Spacer()
-                            .background(Color.blue)
-                        Text("Make your first note")
+                        LazyVStack(content: {
+                            ForEach(days) { day in
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .fill(Color(.basalt))
+                                        .frame(height: 25)
+                                    
+                                    Text(day.feelings)
+                                        .font(.system(size: 20))
+                                }
+                            }
+                        })
+                        .padding(.horizontal)
+                        .padding(.top, 40)
                         Spacer()
                     }
                     .modifier(AppearModifier(onDissapearToggle: $toggle))
@@ -63,19 +74,24 @@ struct ContentView: View {
                 
             }
             .present(isPresented: $showMoodView, type: .toast, position: .bottom, animation: .spring, autohideDuration: nil, closeOnTap: false, closeOnTapOutside: true) {
-                MoodView()
+                MoodView(addCallback: { emoji in
+                    showMoodView = false
+                    addItem(with: !emoji.isEmpty ? emoji : "🫨")
+                })
                     .frame(width: geo.size.width, height: geo.size.height * 0.9)
             }
         }
     }
     
+    
+    
     private func presentMoodView() {
         showMoodView.toggle()
     }
     
-    private func addItem() {
+    private func addItem(with emoji: String) {
         withAnimation {
-            let newItem = Day(date: Date(), feelings: Int.random(in: 1...10), note: nil)
+            let newItem = Day(date: Date(), feelings: emoji, note: nil)
             modelContext.insert(newItem)
         }
     }
