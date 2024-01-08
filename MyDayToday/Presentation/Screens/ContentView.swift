@@ -31,20 +31,37 @@ struct ContentView: View {
                         .padding(.horizontal)
                         .padding(.top, 40)
                         
-                        LazyVStack(content: {
-                            ForEach(days) { day in
-                                ZStack(alignment: .leading) {
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .fill(Color(.basalt))
-                                        .frame(height: 25)
-                                    
-                                    Text(day.feelings)
-                                        .font(.system(size: 20))
+                        Group {
+                            if !days.isEmpty {
+                                LazyVStack(spacing: 10) {
+                                    ForEach(days) { day in
+                                        ZStack(alignment: .leading) {
+                                            RoundedRectangle(cornerRadius: 15)
+                                                .fill(Color(.basalt))
+                                                .frame(height: 25)
+                                            
+                                            HStack {
+                                                Text(day.feelings)
+                                                    .font(.system(size: 40))
+                                                
+                                                Text(day.note)
+                                                    .font(.system(size: 20))
+                                                    .fontDesign(.rounded)
+                                                    .foregroundStyle(.white)
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                                .padding(.horizontal)
+                                .padding(.top, 40)
+                            } else {
+                                LazyVStack(alignment: .center) {
+                                    Text("No captures in the list")
                                 }
                             }
-                        })
-                        .padding(.horizontal)
-                        .padding(.top, 40)
+                        }
+                        
                         Spacer()
                     }
                     .modifier(AppearModifier(onDissapearToggle: $toggle))
@@ -74,11 +91,11 @@ struct ContentView: View {
                 
             }
             .present(isPresented: $showMoodView, type: .toast, position: .bottom, animation: .spring, autohideDuration: nil, closeOnTap: false, closeOnTapOutside: true) {
-                MoodView(addCallback: { emoji in
+                MoodView(addCallback: { emoji, note in
                     showMoodView = false
-                    addItem(with: !emoji.isEmpty ? emoji : "🫨")
+                    addItem(with: !emoji.isEmpty ? emoji : "🫨", and: note)
                 })
-                    .frame(width: geo.size.width, height: geo.size.height * 0.9)
+                .frame(width: geo.size.width, height: geo.size.height * 0.9)
             }
         }
     }
@@ -89,9 +106,9 @@ struct ContentView: View {
         showMoodView.toggle()
     }
     
-    private func addItem(with emoji: String) {
+    private func addItem(with emoji: String, and note: String) {
         withAnimation {
-            let newItem = Day(date: Date(), feelings: emoji, note: nil)
+            let newItem = Day(date: Date(), feelings: emoji, note: note)
             modelContext.insert(newItem)
         }
     }
@@ -110,30 +127,4 @@ struct ContetViewPreview: PreviewProvider {
         ContentView()
     }
 }
-
-
-//            List {
-//                ForEach(days) { item in
-//                    NavigationLink {
-//                        Text("Item at \(item.date, format: Date.FormatStyle(date: .numeric, time: .standard))")
-//                    } label: {
-//                        Text(item.date, format: Date.FormatStyle(date: .numeric, time: .standard))
-//                    }
-//                }
-//                .onDelete(perform: deleteItems)
-//            }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                }
-//                ToolbarItem {
-//                    Button(action: addItem) {
-//                        Label("Add Item", systemImage: "plus")
-//                    }
-//                }
-//            }
-//        } detail: {
-//            Text("Select an item")
-//        }
-//    }
 

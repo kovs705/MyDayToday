@@ -12,9 +12,9 @@ import SwiftData
 final class Day {
     var date: Date
     var feelings: String
-    var note: String?
+    var note: String
     
-    init(date: Date, feelings: String, note: String? = nil) {
+    init(date: Date, feelings: String, note: String) {
         self.date = date
         self.feelings = feelings
         self.note = note
